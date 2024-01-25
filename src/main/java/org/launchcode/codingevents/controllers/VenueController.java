@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.launchcode.codingevents.data.VenueRepository;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("venues")
 public class VenueController {
     @Autowired
     VenueRepository venueRepository;
@@ -42,6 +44,6 @@ public class VenueController {
         }
 
         venueRepository.save(venue);
-        return "redirect:/venues";
+        return "redirect:/venues/index";
     }
 }
